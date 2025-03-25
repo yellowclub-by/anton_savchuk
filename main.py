@@ -1,6 +1,15 @@
-from myMath.calculate import *
+import asyncio
+from aiogram import Bot, Dispatcher, types
 
-summ(10,100)
-mult(10,100)
+TOKEN="7740232101:AAHsT3P_9qqXs6h8JhYcym8D2dDdc_p5WpA"
+bot=Bot(token=TOKEN)
+dp=Dispatcher()
 
-print("")
+async def main():
+    print("Бот запущен")
+    await dp.start_polling(bot)
+
+asyncio.run(main())
+
+
+
