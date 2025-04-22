@@ -12,8 +12,8 @@ async def start(message: types.Message):
 async def catalog(message: types.Message):
     await(message.answer("способы оплаты"))
 
-@user_router.message(F.text.lower().startswith("как").contains("цен")|
-                     F.text.lower().contains("стоит").endswith("?"))
+@user_router.message(F.text.lower().startswith("как").contains("цен")| F.text.lower().contains("стоит").endswith("?"))
+
 @user_router.message(Command("catalog"))
 async def catalog_2(message: types.Message):
     await(message.answer("это список билетов"))
@@ -25,10 +25,10 @@ async def story(message: types.Message):
 @user_router.message(Command("basket"))
 async def basket(message: types.Message):
     await(message.answer("ваши покупки"))
-@user_router.message(F.text.lower().startswith("как").contains("цен")|
-                     F.text.lower().contains("стоит").endswith("?"))
-async def echo(message: types.Message):
-    await(message.answer("бот находится в разроботке"))
+# @user_router.message(F.text.lower().startswith("как").contains("цен")|
+#                      F.text.lower().contains("стоит").endswith("?"))
+# async def echo(message: types.Message):
+#     await(message.answer("бот находится в разроботке"))
 
 
 

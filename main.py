@@ -7,7 +7,10 @@ dp=Dispatcher()
 
 
 from handlers.user_private import user_router
+from handlers.user_groupe import group_router
+
 dp.include_router(user_router)
+dp.include_router(group_router)
 
 
 
