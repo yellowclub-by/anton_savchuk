@@ -20,16 +20,18 @@ async def pay_info(callback:types.CallbackQuery):
     if query=="1":
         await callback.message.answer("введите номер карты")
     elif query=="2":
-        await callback.message.answer("переведите на этот адрес: 1984")
+        await callback.message.answer("<tg-spoiler>переведите на этот адрес: 1984</tg-spoiler>")
     await callback.answer("инструкция отправлена")
 @user_router.message(F.text.lower().contains("каталог"))
 @user_router.message(Command("catalog"))
 async def catalog_2(message: types.Message):
     await(message.answer("это список билетов",  reply_markup=reply.catalog_kb))
 
+
+@user_router.message(F.text.lower()=="история покупок")
 @user_router.message(Command("story"))
 async def story(message: types.Message):
-    await(message.answer("история покупок"))
+    await(message.answer("история покупок", reply_markup=inline.links_kb))
 
 @user_router.message(Command("basket"))
 async def basket(message: types.Message):
